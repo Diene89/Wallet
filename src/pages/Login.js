@@ -31,7 +31,6 @@ class Login extends React.Component {
     event.preventDefault();
     const { history, userLogin } = this.props;
     const { email } = this.state;
-    console.log('diene');
     userLogin(email);
     history.push('/carteira');
   }
