@@ -5,15 +5,15 @@ import { connect } from 'react-redux';
 class Header extends Component {
   render() {
     const { userState } = this.props;
-    console.log(userState);
+    const moeda = 0;
     return (
       <div>
         <h3 data-testid="email-field">
-          Email:
+          Usuário:
           {userState}
         </h3>
         <h3 data-testid="total-field">
-          0
+          {moeda}
         </h3>
         <h3 data-testid="header-currency-field">
           BRL
@@ -28,7 +28,7 @@ const mapStateToProps = (state) => ({
 });
 
 Header.propTypes = {
-  userState: PropTypes.objectOf(PropTypes.any).isRequired,
+  userState: PropTypes.string.isRequired,
 };
 
 export default connect(mapStateToProps)(Header);
