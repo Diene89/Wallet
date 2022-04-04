@@ -11,7 +11,7 @@ export const success = (coins) => {
   const keys = Object.keys(coins).filter((coin) => coin !== 'USDT');
   return ({
     type: SUCCESS,
-    currencie: keys,
+    currencies: keys,
   });
 };
 

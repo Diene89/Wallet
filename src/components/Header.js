@@ -8,16 +8,15 @@ class Header extends Component {
     const moeda = 0;
     return (
       <div>
-        <h3 data-testid="email-field">
-          Usuário:
-          {userState}
-        </h3>
-        <h3 data-testid="total-field">
-          {moeda}
-        </h3>
-        <h3 data-testid="header-currency-field">
+        <p data-testid="email-field">
+          {`Usuário: ${userState}`}
+        </p>
+        <p data-testid="total-field">
+          {`Despesa Total: R$ ${moeda}`}
+        </p>
+        <p data-testid="header-currency-field">
           BRL
-        </h3>
+        </p>
       </div>
     );
   }
