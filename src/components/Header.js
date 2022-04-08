@@ -12,22 +12,17 @@ class Header extends Component {
 
   myTotal = () => {
     const { expenses } = this.props;
-    console.log(expenses);
-    // const myExpense = expenses;
     if (expenses.length === 0) { return 0; }
     const vitu = expenses.reduce((acc, curr) => {
       const { value, exchangeRates, currency } = curr;
-      // console.log(value, exchangeRates, currency);
       acc += Number(value) * Number(exchangeRates[currency].ask);
       return acc;
     }, 0).toFixed(2);
-    // console.log(vitu);
     return vitu;
   }
 
   render() {
     const { userState } = this.props;
-    // const { total } = this.state;
     return (
       <div>
         <p data-testid="email-field">
