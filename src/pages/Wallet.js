@@ -9,7 +9,6 @@ import Table from '../components/Table';
 class Wallet extends React.Component {
   componentDidMount() {
     const { curriencieDispatch } = this.props;
-    // console.log(this.props);
     curriencieDispatch();
   }
 

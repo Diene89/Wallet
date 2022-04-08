@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { thunkCoin, addExpense } from '../actions';
+import { thunkCoin, addExpense, API } from '../actions';
 
 class ExpenseForm extends Component {
   constructor() {
@@ -19,9 +19,10 @@ class ExpenseForm extends Component {
 
   handleButtonClick = async () => {
     console.log('click');
-    const { currencies, expenseDispatch, curriencieDispatch } = this.props;
+    const { expenseDispatch } = this.props;
     const { id, value, currency, method, tag, description } = this.state;
-    await curriencieDispatch();
+    // await curriencieDispatch();
+    const request = await API();
 
     const expenses = {
       id,
@@ -30,7 +31,7 @@ class ExpenseForm extends Component {
       method,
       tag,
       description,
-      exchangeRates: currencies,
+      exchangeRates: request,
     };
 
     expenseDispatch(expenses);

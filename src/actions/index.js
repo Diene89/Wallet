@@ -26,6 +26,7 @@ export function thunkCoin() {
   return async (dispatch) => {
     dispatch(request());
     const coin = await API();
-    return dispatch(success(coin));
+    dispatch(success(coin));
+    return coin;
   };
 }
