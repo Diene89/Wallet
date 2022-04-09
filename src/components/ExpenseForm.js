@@ -21,7 +21,6 @@ class ExpenseForm extends Component {
     console.log('click');
     const { expenseDispatch } = this.props;
     const { id, value, currency, method, tag, description } = this.state;
-    // await curriencieDispatch();
     const request = await API();
 
     const expenses = {
@@ -50,7 +49,6 @@ class ExpenseForm extends Component {
   render() {
     const { currencies } = this.props;
     const { value, currency, method, tag, description } = this.state;
-    const filterUSDT = currencies.filter((coin) => coin !== 'USDT');
     return (
       <form>
         <label htmlFor="value-input">
@@ -74,7 +72,7 @@ class ExpenseForm extends Component {
             value={ currency }
             onChange={ this.handleChange }
           >
-            { filterUSDT.map((item, index) => (
+            { currencies.map((item, index) => (
               <option key={ index } value={ item }>{item}</option>
             )) }
           </select>

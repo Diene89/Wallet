@@ -10,7 +10,7 @@ export const request = () => ({ type: REQUEST_API });
 // export const success = (coins) => ({ type: SUCCESS, coins });
 
 export const success = (coins) => {
-  const keys = Object.keys(coins);
+  const keys = Object.keys(coins).filter((coin) => coin !== 'USDT');
   return ({
     type: SUCCESS,
     currencies: keys,
