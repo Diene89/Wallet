@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class Header extends Component {
-
   myTotal = () => {
     const { expenses } = this.props;
     if (expenses.length === 0) { return 0; }
@@ -40,7 +39,7 @@ const mapStateToProps = (state) => ({
 
 Header.propTypes = {
   userState: PropTypes.string.isRequired,
-  expenses: PropTypes.objectOf(PropTypes.any).isRequired,
+  expenses: PropTypes.arrayOf(PropTypes.any).isRequired,
 };
 
 export default connect(mapStateToProps)(Header);
