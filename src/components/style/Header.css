@@ -1,0 +1,13 @@
+  .header-container {
+    background-color: rgb(61, 117, 108);
+    border-bottom: 8px solid rgb(67, 97, 97);
+    display: flex;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding: 0 30px;
+  }
+  
+  .header-container p {
+    padding: 0 8px;
+  }

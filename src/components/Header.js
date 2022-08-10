@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './style/Header.css';
 
 class Header extends Component {
   myTotal = () => {
@@ -17,7 +18,7 @@ class Header extends Component {
   render() {
     const { userState } = this.props;
     return (
-      <div>
+      <div className="header-container">
         <p data-testid="email-field">
           {`Usuário: ${userState}`}
         </p>

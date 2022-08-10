@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { login } from '../actions';
+import '../components/style/Login.css';
 
 class Login extends React.Component {
   constructor() {
@@ -38,26 +39,29 @@ class Login extends React.Component {
   render() {
     const { isButtonDisabled } = this.state;
     return (
-      <form>
-        <input
-          type="text"
-          name="email"
-          placeholder="Digite o seu e-mail"
-          data-testid="email-input"
-          onChange={ this.handleChange }
-        />
-        <input
-          type="password"
-          name="password"
-          data-testid="password-input"
-          onChange={ this.handleChange }
-        />
-        <input
-          type="button"
-          disabled={ isButtonDisabled }
-          onClick={ this.handleButtonClick }
-          value="Entrar"
-        />
+      <form className="login-container">
+        <h1>TRYBEWallet</h1>
+        <section className="input-area">
+          <input
+            type="text"
+            name="email"
+            placeholder="Digite o seu e-mail"
+            data-testid="email-input"
+            onChange={ this.handleChange }
+          />
+          <input
+            type="password"
+            name="password"
+            data-testid="password-input"
+            onChange={ this.handleChange }
+          />
+          <input
+            type="button"
+            disabled={ isButtonDisabled }
+            onClick={ this.handleButtonClick }
+            value="Entrar"
+          />
+        </section>
       </form>
     );
   }
